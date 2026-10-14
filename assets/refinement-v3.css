@@ -1,0 +1,68 @@
+/* Photographic scenery: deliberately low contrast behind the content. */
+.cinema-city { background-image:url('castle-river-realistic.png');filter:grayscale(1) blur(.25px);opacity:.39;background-position:center; }
+#ambientBackdrop::after { background:radial-gradient(ellipse at 53% 45%,rgba(5,6,8,.64),rgba(5,6,8,.56) 64%,rgba(3,4,5,.8))!important; }
+.cinema-fog { opacity:.38; }
+.cinema-river { opacity:.018;animation:river-reflection-v3 22s ease-in-out infinite alternate; }
+@keyframes river-reflection-v3 { from { transform:translate3d(-.6%,0,0);opacity:.01; }to { transform:translate3d(.6%,5px,0);opacity:.028; } }
+.cinema-dust { opacity:0;animation-name:quiet-dust-v3; }
+@keyframes quiet-dust-v3 { 0% { opacity:0;transform:translate3d(0,25px,0); }20% { opacity:.09; }75% { opacity:.04; }100% { opacity:0;transform:translate3d(25px,-70vh,0); } }
+.cinema-meteor { width:62px;height:1px;background:linear-gradient(90deg,transparent,rgba(239,241,244,.6));animation-name:skyfall-v3;animation-duration:22s;transform:rotate(66deg); }
+.cinema-meteor::after { width:1px;box-shadow:none;background:#e8e8e8; }
+@keyframes skyfall-v3 {
+  0%,.5% { opacity:0;transform:translate3d(0,0,0) rotate(66deg); }
+  1.1% { opacity:.055; }
+  3%,100% { opacity:0;transform:translate3d(145px,325px,0) rotate(66deg); }
+}
+/* The label belongs to the avatar; a completed copy never leaves it visible. */
+html body[data-page] .avatar-frame .copy-link-label { opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-3px); }
+html body[data-page] .avatar-frame:hover .copy-link-label,
+html body[data-page] .avatar-frame:focus-visible .copy-link-label { opacity:1;visibility:visible;transform:translate(-50%,0); }
+/* Keep every card and its illustrated browser fixed while hovering. */
+html body[data-page="shop"] .shop-card,
+html body[data-page="shop"] .shop-card:is(:hover,:focus-visible,:focus-within) { transform:none!important;translate:none!important;scale:none!important; }
+html body[data-page="shop"] .shop-card .premium-model {
+  animation:none!important;transform:rotateX(7deg) rotateY(-12deg) rotateZ(-3deg)!important;
+}
+html body[data-page="shop"] .shop-card .product-art { transition:box-shadow .55s ease-out; }
+html body[data-page="shop"] .shop-card:hover .product-art { box-shadow:inset 0 0 55px #ffffff05; }
+.premium-screen { box-shadow:6px 7px 0 #08090b,7px 8px 0 #ffffff30,0 18px 36px #0008,inset 0 1px #ffffff20; }
+.browser-chip-search { min-width:108px;transform:translateZ(32px); }
+.browser-chip-search .google-mark { width:25px;height:25px;filter:drop-shadow(1px 2px 0 #0008); }
+.link-site-preview .mini-profile { padding:8px 30px; }
+.link-site-preview .mini-profile img { width:25px;height:25px; }
+.link-site-preview .mini-profile a { position:relative;overflow:hidden;padding:4px 6px;color:#dce0e6; }
+.link-site-preview .mini-profile a:first-of-type::after { content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff12 50%,transparent 75%);transform:translateX(-130%);animation:preview-sheen-v3 9s ease-in-out infinite; }
+@keyframes preview-sheen-v3 { 0%,65% { transform:translateX(-130%); }90%,100% { transform:translateX(130%); } }
+.preview-domain { position:absolute;z-index:4;left:5px;right:-12px;bottom:-8px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 15px;transform:translateZ(42px);border:1px solid #ffffff38;border-radius:9px;background:linear-gradient(145deg,#33373d,#16181c);box-shadow:3px 4px 0 #08090b,4px 5px 0 #ffffff19,0 14px 24px #0007; }
+.preview-domain span { color:#f8f9fb;font:700 17px/1.15 "Sora",Arial,sans-serif;letter-spacing:-.7px;text-shadow:0 1px #aaa,0 2px #6c7077,0 3px #33383d,0 5px 8px #0006; }
+.preview-domain svg { width:18px;height:18px;color:#cdd1d7; }
+.link-site-preview .browser-chip-status { right:-20px;bottom:-46px;padding:7px 10px; }
+.link-site-preview .browser-cursor { right:22px;bottom:41px; }
+/* Two small jumps per four-second cycle, with a synchronized white halo. */
+.shop-scroll-cue { left:50%;right:auto;bottom:76px;width:51px;height:51px;transform:translate(-50%,0);animation:arrow-double-v3 4s ease-in-out 4s infinite;animation-play-state:paused; }
+.shop-scroll-cue.visible { animation-play-state:running; }
+.shop-scroll-cue svg { width:23px;height:23px; }
+.shop-scroll-cue::after { animation:arrow-halo-v3 4s ease-in-out 4s infinite;animation-play-state:paused;box-shadow:0 0 15px 3px #ffffff50,0 0 30px 6px #ffffff1c; }
+.shop-scroll-cue.visible::after { animation-play-state:running; }
+@keyframes arrow-double-v3 { 0%,18%,38%,100% { transform:translate(-50%,0); }9% { transform:translate(-50%,-9px); }28% { transform:translate(-50%,-6px); } }
+@keyframes arrow-halo-v3 { 0%,18%,38%,100% { opacity:0; }9%,28% { opacity:1; } }
+@media(max-width:600px) { .cinema-city { background-position:62% center; }.shop-scroll-cue { left:50%;right:auto;bottom:72px;width:48px;height:48px; }.preview-domain span { font-size:15px; } }
+
+.animation-paused .link-site-preview .mini-profile a:first-of-type::after { animation-play-state:paused; }
+
+/* A nearly hidden landscape, with a fuller but restrained meteor shower. */
+.cinema-city { opacity:.075;filter:grayscale(1) brightness(.65) blur(.4px); }
+#ambientBackdrop::after { background:radial-gradient(ellipse at 53% 45%,#050608a8,#050608c4 68%,#030405e8)!important; }
+.cinema-fog { opacity:.12; }
+.cinema-river { opacity:.006;animation:none; }
+.cinema-dust { display:none; }
+.cinema-meteor { width:var(--length,70px);height:1px;top:-100px;left:var(--left);transform-origin:right center;background:linear-gradient(90deg,transparent,#dce1ed55 75%,#f8faff);animation:meteor-shower-v4 var(--duration,12s) linear var(--delay,0s) infinite;will-change:transform,opacity; }
+.cinema-meteor::after { width:2px;height:2px;box-shadow:0 0 7px #ffffff55;background:#fff; }
+@keyframes meteor-shower-v4 {
+  0% { opacity:0;transform:translate3d(0,0,0) rotate(72deg); }
+  3% { opacity:var(--strength,.2); }
+  27% { opacity:var(--strength,.2); }
+  36%,100% { opacity:0;transform:translate3d(38vh,120vh,0) rotate(72deg); }
+}
+@media(max-width:600px) { .cinema-meteor:nth-last-of-type(n+17) { display:none; } }
+

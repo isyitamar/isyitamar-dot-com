@@ -1,0 +1,36 @@
+/* Soft photographic scenery above the supplied vignette. */
+html body[data-page] #ambientBackdrop {
+ background:#050506 url('dark-vignette.png') center/cover no-repeat!important;
+ opacity:1;isolation:isolate;
+}
+html body[data-page] #ambientBackdrop::after {
+ z-index:2;background:radial-gradient(ellipse at 50% 45%,#0000000a 25%,#00000038 100%)!important;
+ pointer-events:none;
+}
+#ambientBackdrop .cinema-city {
+ z-index:1;opacity:.105;filter:grayscale(1) brightness(.72) blur(.45px);
+ mix-blend-mode:screen;
+}
+#ambientBackdrop .cinema-fog { z-index:3;opacity:.08; }
+#ambientBackdrop .cinema-river { display:none; }
+#ambientBackdrop .falling-star-sky { position:absolute;inset:0;z-index:6;overflow:hidden;pointer-events:none; }
+/* Each small star has a luminous core and fine four-point diffraction rays. */
+.falling-star {
+ position:absolute;display:block;left:0;top:0;
+ width:var(--size);height:var(--size);border-radius:50%;
+ background:radial-gradient(circle,#fff 20%,#ffffffe6 45%,#ffffff00 75%);
+ box-shadow:0 0 5px 1px #ffffff55,0 0 12px 2px #ffffff14;
+ opacity:0;
+ will-change:transform,opacity;
+}
+.falling-star::before,.falling-star::after {
+ content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+ pointer-events:none;
+}
+.falling-star::before { width:calc(var(--size)*3.2);height:1px;background:linear-gradient(90deg,transparent,#ffffffc9,transparent); }
+.falling-star::after { width:1px;height:calc(var(--size)*3.8);background:linear-gradient(0deg,transparent,#ffffffdb,transparent); }
+.star-trail { position:absolute;display:block;left:50%;bottom:50%;width:1px;height:var(--tail);transform:translateX(-50%);background:linear-gradient(0deg,#ffffff80,transparent);filter:blur(.25px);opacity:.65; }
+
+/* Motion is driven per star, independent of operating-system motion settings. */
+.pointer-starlight { position:fixed;left:0;top:0;width:120px;height:120px;z-index:1000;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .25s ease-out;background:radial-gradient(circle,#ffffff70 0%,#ffffff2b 9%,#ffffff12 25%,#ffffff06 45%,transparent 72%);will-change:transform; }
+.pointer-starlight.is-visible { opacity:.8; }
