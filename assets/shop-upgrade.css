@@ -1,0 +1,115 @@
+/* Soft light: the previous 60px radius is now 150px. */
+html body .pointer-starlight{width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.25) 0%,rgba(255,255,255,.18) 5%,rgba(255,255,255,.115) 13%,rgba(255,255,255,.068) 25%,rgba(255,255,255,.032) 42%,rgba(255,255,255,.012) 61%,rgba(255,255,255,.003) 80%,transparent 100%);transition:opacity .6s ease-out;filter:blur(3px)}
+html body .pointer-starlight.is-visible{opacity:.8}
+html body[data-page] .auth-top{position:fixed;left:clamp(20px,4vw,64px);top:var(--login-center,40px);transform:translateY(-50%);margin:0;width:auto;z-index:25}
+html body[data-page] .auth-top-link{font:400 21px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.015em;padding:10px 0;border:0;border-radius:0;background:none;box-shadow:none;max-width:155px;color:#d5d5d8;transition:color .45s ease-out,text-shadow .45s ease-out}
+html body[data-page] .auth-top-link:hover{color:#fff;background:none;border:0;box-shadow:none;text-shadow:0 0 20px #ffffff65}
+.auth-top-link .auth-user-icon{display:none}
+.auth-top-link:focus-visible{outline:1px solid #fff;outline-offset:6px}
+.auth-content{width:min(460px,100%)}
+.auth-content .page-heading{margin-bottom:23px}
+.auth-panel{padding:36px 38px 30px;border-radius:19px;border:1px solid #ffffff1f;background:radial-gradient(ellipse at 0 0,#ffffff0d,transparent 60%),linear-gradient(150deg,#161719ef,#090a0cf2);box-shadow:0 34px 80px -35px #000,inset 0 1px #ffffff0b}
+.auth-panel::before{left:20%;right:20%;background:linear-gradient(90deg,transparent,#ffffff70,transparent)}
+.auth-panel h2{font:600 clamp(28px,3vw,36px)/1.15 Arial,Helvetica,sans-serif;letter-spacing:-1.3px}
+.auth-eyebrow{color:#929397;font-size:9px;letter-spacing:.17em;margin-bottom:18px}
+.auth-caption{font:400 13px/1.7 Arial,Helvetica,sans-serif;color:#96979c;margin-bottom:26px}
+.auth-panel label{font:500 12px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.02em}
+.auth-panel input{height:50px;border-radius:7px;background:#05060880;border-color:#ffffff24;font:400 14px Arial,sans-serif;transition:border-color .45s,box-shadow .45s,background .45s}
+.auth-panel input:focus{border-color:#ffffff80;background:#141517;box-shadow:0 0 0 3px #ffffff06}
+.auth-primary{height:48px;border-radius:7px;background:linear-gradient(110deg,#f7f7f7,#c9cbd0);font:600 14px Arial,sans-serif;margin-top:25px;transition:box-shadow .5s ease-out,filter .5s ease-out}
+.auth-primary:hover{filter:brightness(1.07);box-shadow:0 6px 28px #ffffff1b}
+.auth-or{margin:22px 0;color:#77787d}.auth-google{height:46px;border-radius:7px}.auth-switch{font:400 12px/1.8 Arial,sans-serif;margin-top:24px}.auth-switch a{margin-left:4px;text-decoration-thickness:1px}.auth-forgot{font:400 11px Arial,sans-serif}
+html body[data-page="shop"] .shop-grid{direction:ltr;align-items:start}
+.shop-content .real-product .product-art{height:clamp(220px,28dvh,300px);background:radial-gradient(ellipse at 50% 75%,#25213155,transparent 65%),#050506}
+.shop-content .real-product .product-info h3{font:400 clamp(22px,2.2vw,30px)/1.2 "Archivo Black",Arial,sans-serif;letter-spacing:-.045em}
+.shop-content .real-product .product-page-link{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.shop-content .real-product .product-page-link>span{font:400 23px Arial;color:#8d8e99}
+.shop-content .real-product .product-purchase-row{margin-top:17px;min-height:45px}
+.shop-content .real-product .product-description p{font-size:12px;line-height:1.85;color:#b2b3bd}
+.shop-content .real-product .price-current{font-size:25px}
+.bot-price{position:relative;display:grid;min-width:155px;height:42px;font-family:Arial,Helvetica,sans-serif;color:#f3f3f6;isolation:isolate}
+.bot-price-option{grid-area:1/1;display:flex;align-items:baseline;gap:7px;opacity:1;transform:translateY(0);filter:blur(0);transition:opacity .5s ease-out,transform .5s ease-out,filter .5s ease-out}
+.bot-price-option strong{font-size:27px;letter-spacing:-1px;font-weight:650;font-variant-numeric:tabular-nums}
+.bot-price-option strong>span{font-size:15px;margin-left:3px;font-weight:400;vertical-align:2px}
+.bot-price-option small{font-size:12px;color:#999ba6;letter-spacing:.01em}
+.bot-price-option.yearly{opacity:0;transform:translateY(8px);filter:blur(3px);pointer-events:none}
+body[data-billing="year"] .bot-price-option.yearly{opacity:1;transform:translateY(0);filter:blur(0)}
+body[data-billing="year"] .bot-price-option.monthly{opacity:0;transform:translateY(-8px);filter:blur(3px);pointer-events:none}
+.bot-custom-label{position:absolute;left:22px;right:22px;top:19px;display:flex;flex-direction:column;gap:5px;z-index:2;pointer-events:none}
+.bot-custom-label>span{font:500 7px Arial,sans-serif;letter-spacing:.16em;color:#85838e}.bot-custom-label>b{font:500 11px Arial,sans-serif;color:#cdcbd8}
+.bot-online{position:absolute;bottom:15px;right:18px;display:flex;align-items:center;gap:6px;font:500 8px Arial,sans-serif;letter-spacing:.12em;color:#a5a0b7;pointer-events:none}
+.bot-online i{width:4px;height:4px;border-radius:50%;background:#d8d2ff;box-shadow:0 0 9px #c9c2ff8a}
+.bot-art .link-product-viewport{inset:20px 0 0}
+.bot-detail .product-detail-art{background:radial-gradient(ellipse at 50% 45%,#655a8b19,transparent 66%),#08080bcc}
+.bot-detail h1{white-space:normal;max-width:520px;font-size:clamp(36px,4.7vw,64px)}
+.bot-detail .product-title-dot{display:none}.bot-detail .detail-purchase{margin-top:28px}
+.bot-detail .bot-price{height:48px}.bot-detail .bot-price strong{font-size:35px}.bot-detail .bot-price small{font-size:14px}
+.bot-detail .link-product-viewport{pointer-events:auto;touch-action:pan-y;cursor:grab}.bot-detail .link-product-viewport.is-dragging{cursor:grabbing}
+.bot-features{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin-top:28px;border-top:1px solid #ffffff18}
+.bot-features span{padding:13px 0;border-bottom:1px solid #ffffff0c;font:400 11px/1.5 "Sora",Arial,sans-serif;color:#adaab9}
+.bot-features span::before{content:"+";margin-right:9px;color:#e4dfff}
+html body[data-page="discord-bot"] .home-stage>.site-shell{overflow-y:auto}
+@media(max-width:1050px){html body[data-page] .top-nav{padding-top:34px}html body[data-page] .auth-top{top:24px;left:24px}html body[data-page] .auth-top-link{font-size:19px}}
+@media(max-width:600px){.auth-panel{padding:28px 24px}.auth-panel input{font-size:16px}.shop-content .real-product .product-art{height:275px}.bot-features{gap:0 10px}.bot-detail .product-detail-art{height:390px}.bot-detail .detail-purchase{flex-wrap:wrap;gap:18px}.auth-content{padding-bottom:16px}}
+/* Login shares the navigation baseline, anchored within the divider's left edge. */
+html body[data-page] .auth-top{position:fixed;left:var(--login-edge,30px);top:var(--login-line,85px);transform:translateY(-100%);margin:0;width:145px;max-width:20vw}
+html body[data-page] .auth-top-link{font-weight:800;letter-spacing:-.015em;line-height:1;padding:0 0 14px;max-width:100%;color:#eee;display:block}
+html body[data-page] .top-nav .categories{padding-left:155px;padding-right:155px}
+html body[data-page] .auth-top-link:hover{text-shadow:0 0 18px #ffffff55}
+.shop-content .bot-art .link-product-viewport{inset:0}
+.bot-symbol{width:175px;height:145px;top:10px;filter:drop-shadow(2px 3px 0 #303893) drop-shadow(3px 8px 0 #20275f) drop-shadow(0 17px 20px #0009)}
+.bot-art{background:radial-gradient(ellipse at 50% 70%,#5865f21c,transparent 65%),#050506!important}
+.billing-switch{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr;width:220px;max-width:100%;padding:4px;margin:20px 0 5px;border:1px solid #ffffff20;border-radius:10px;background:#050508a0;font-family:"Sora",Arial,sans-serif;min-inline-size:0}
+.billing-switch legend{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.billing-switch label{position:relative;z-index:2;display:block;cursor:pointer;text-align:center}
+.billing-switch input{position:absolute;opacity:0;width:1px;height:1px}
+.billing-switch span{display:block;padding:10px 8px;font-size:11px;font-weight:600;color:#8b8d99;transition:color .45s ease-out}
+.billing-switch i{position:absolute;left:4px;top:4px;bottom:4px;width:calc(50% - 4px);border-radius:7px;background:linear-gradient(135deg,#41434e,#282a34);box-shadow:0 2px 8px #0005,inset 0 1px #ffffff22;transition:transform .45s ease-out;pointer-events:none}
+.billing-switch:has(input[value="year"]:checked) i{transform:translateX(100%)}
+.billing-switch input:checked+span{color:#fff}.billing-switch label:has(input:focus-visible){outline:2px solid #ddd;outline-offset:2px;border-radius:7px}
+.bot-detail .billing-switch{margin-top:26px}.bot-detail .detail-purchase{margin-top:18px}
+.thumbnail-detail h1{white-space:normal;font-size:clamp(36px,4.6vw,62px);max-width:510px;line-height:1.05}.thumbnail-detail .product-title-dot{display:none}
+.thumbnail-detail .link-product-viewport{pointer-events:auto;touch-action:pan-y;cursor:grab}.thumbnail-detail .link-product-viewport.is-dragging{cursor:grabbing}
+.thumbnail-art{background:radial-gradient(ellipse at 50% 70%,#ff153912,transparent 65%),#050506!important}
+.thumbnail-detail .product-detail-art{background:radial-gradient(ellipse at 50% 45%,#ff153912,transparent 66%),#08080bcc}
+.thumbnail-examples-link{display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;min-width:155px;border:1px solid #ffffff35;border-radius:9px;background:linear-gradient(130deg,#27272ddd,#141419e8);color:#f6f6f8;font:600 13px/1.3 "Sora",Arial,sans-serif;text-decoration:none;transition:border-color .5s ease-out,box-shadow .5s ease-out,background .5s ease-out}
+.thumbnail-examples-link:hover{border-color:#ffffffa0;box-shadow:0 0 28px #ffffff12;background:#303036}.thumbnail-examples-link:focus-visible{outline:2px solid white;outline-offset:5px}
+.thumbnail-gallery{width:min(1120px,100%);margin:0 auto;padding-bottom:65px}
+.thumbnail-gallery .page-heading{margin-bottom:26px}.thumbnail-gallery .links-title{font-size:clamp(23px,3vw,38px)}
+.thumbnail-example-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;margin:35px 0 38px}
+.thumbnail-example{margin:0;overflow:hidden;border-radius:15px;border:1px solid #ffffff24;background:#0b0b0d;box-shadow:0 20px 45px -25px #000b;transition:border-color .5s ease-out,box-shadow .5s ease-out}
+.thumbnail-example:hover{border-color:#ffffff70;box-shadow:0 22px 45px -24px #000,0 0 25px #ffffff09}
+.thumbnail-example img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:1672/941}
+.gallery-return{display:flex;justify-content:center;padding:0 0 35px}
+html body[data-page="thumbnail-examples"] .home-stage>.site-shell{overflow-y:auto;align-items:flex-start;justify-content:flex-start}
+html body[data-page="thumbnail-design"] .home-stage>.site-shell{overflow-y:auto}
+@media(max-width:1050px){html body[data-page] .top-nav{padding-top:0}html body[data-page] .top-nav .categories{padding-left:110px;padding-right:20px}html body[data-page] .auth-top{max-width:100px}}
+@media(max-width:760px){.thumbnail-example-grid{grid-template-columns:1fr;gap:22px;margin-top:24px}.thumbnail-gallery{padding-bottom:50px}html body[data-page] .top-nav .categories{padding-left:80px;padding-right:0;flex-wrap:wrap;gap:8px 12px}html body[data-page] .auth-top{max-width:78px}.thumbnail-detail .product-detail-art{height:390px}.thumbnail-detail .detail-purchase{flex-wrap:wrap;gap:18px}}
+/* Matching product proportions, including the selected billing control. */
+html body[data-page="shop"] .shop-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+html body[data-page="shop"] .shop-card{min-width:0;display:flex;flex-direction:column;height:100%}
+html body[data-page="shop"] .shop-card .product-art{height:clamp(220px,28dvh,300px);flex:none}
+html body[data-page="shop"] .shop-card .product-info{flex:1;min-width:0}
+html body[data-page="shop"] .shop-card .product-info h3{height:70px;display:flex;align-items:center;margin:0;font-size:clamp(21px,2.1vw,29px)}
+html body[data-page="shop"] .product-page-link{width:100%;white-space:normal}
+html body[data-page="shop"] .product-purchase-row{height:46px;margin-top:10px;gap:7px}
+html body[data-page="shop"] .billing-switch{width:102px;flex:0 0 102px;margin:0;padding:3px;border-radius:8px}
+html body[data-page="shop"] .billing-switch span{font:600 8px/1.3 "Sora",Arial,sans-serif;padding:10px 2px}
+html body[data-page="shop"] .billing-switch i{left:3px;top:3px;bottom:3px;width:calc(50% - 3px);border-radius:5px}
+html body[data-page="shop"] .bot-price{min-width:82px;flex:1;height:42px}
+html body[data-page="shop"] .bot-price-option{gap:3px;align-items:baseline}
+html body[data-page="shop"] .bot-price-option strong{font-size:24px}
+html body[data-page="shop"] .bot-price-option strong>span{font-size:12px;margin-left:1px}
+html body[data-page="shop"] .bot-price-option small{font-size:9px}
+html body[data-page="shop"] .product-cart{flex:0 0 34px;width:34px;height:38px}
+html body[data-page] .auth-top-link{font-weight:700;color:rgba(255,255,255,.74);text-transform:none;text-shadow:none;position:relative;width:max-content;padding-bottom:14px}
+html body[data-page] .auth-top-link::after{content:"";position:absolute;left:50%;bottom:0;width:24px;height:3px;border-radius:999px;background:#fff;transform:translateX(-50%) scaleX(0);transition:transform .35s ease-out}
+html body[data-page] .auth-top-link:hover{color:#fff;text-shadow:none}
+html body[data-page] .auth-top-link:hover::after,html body[data-page="login"] .auth-top-link::after,html body[data-page="register"] .auth-top-link::after{transform:translateX(-50%) scaleX(1)}
+@media(max-width:1100px) and (min-width:981px){html body[data-page="shop"] .product-info{padding-left:16px;padding-right:16px}html body[data-page="shop"] .billing-switch{width:88px;flex-basis:88px}}
+@media(max-width:980px){html body[data-page="shop"] .shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){html body[data-page="shop"] .shop-grid{grid-template-columns:minmax(0,1fr)}html body[data-page="shop"] .product-art{height:260px!important}}
+
+/* Align Login to the category row itself, not to the divider. */
+html body[data-page] .auth-top{top:var(--login-line,30px);transform:none}
+html body[data-page] .auth-top-link{display:flex;align-items:center;box-sizing:border-box}

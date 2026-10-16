@@ -1,0 +1,40 @@
+/* Preserve normal sizing and distribute spare height instead of compressing the top. */
+@media(min-width:900px) and (min-height:620px){
+html body[data-page].viewport-page .home-stage>.site-shell{min-height:0;padding-top:18px!important;padding-bottom:14px!important;overflow-y:auto!important;display:flex;align-items:flex-start}
+html body.viewport-page .page-content{margin:0 auto!important;padding-bottom:0!important;box-sizing:border-box;min-height:0!important;height:auto!important;display:flex;flex-direction:column}
+html body.viewport-page .page-content.viewport-filled{min-height:var(--fit-height)!important}
+html body.viewport-page .page-heading{flex:none;gap:9px!important;margin:0 0 20px!important;padding-bottom:0!important}
+html body.viewport-page .page-heading .avatar-frame{width:64px!important;height:64px!important}
+html body.viewport-page .links-title{font-size:32px!important;margin:0!important;line-height:1.2!important}
+.auth-content{width:min(490px,100%)!important}.auth-panel{flex:1;padding:28px 32px!important;display:flex;flex-direction:column;justify-content:center}.auth-panel #authEntry{display:flex;flex-direction:column;justify-content:space-between;flex:1}.auth-panel #authEntry[hidden]{display:none!important}.auth-panel .collection-notice{font-size:11px;line-height:1.6;margin:14px 0 0}
+body[data-page=register] .auth-content{width:min(640px,100%)!important}body[data-page=register] #authForm{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}body[data-page=register] #authForm>.auth-primary,body[data-page=register] #authForm>.collection-notice{grid-column:1/-1}.auth-field{min-width:0}
+html body[data-page=contact] .contact-content{width:min(820px,100%)!important}.contact-panel{flex:1;display:flex;flex-direction:column;padding:28px 32px!important}.contact-form{flex:1;display:flex;flex-direction:column}.contact-grid{flex:1;gap:20px 22px;align-content:space-between}.contact-field textarea{height:112px;min-height:112px}.contact-actions{margin-top:22px}.contact-form .collection-notice{font-size:11px;line-height:1.6;margin-bottom:0}
+html body[data-page=steam] .steam-content{width:min(1100px,100%)!important}.steam-dashboard{flex:1;display:grid!important;grid-template-columns:1.1fr 1fr 1fr!important;grid-template-rows:auto auto minmax(min-content,1fr);gap:20px!important}.steam-hero{grid-column:1/-1;padding:22px!important}.steam-stats{grid-column:1/-1;gap:20px!important}.steam-stat{padding:18px!important}.steam-panel{padding:22px!important;grid-column:auto!important}.friend-list{display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important}.friend-item{min-width:0}.friend-item strong{overflow-wrap:anywhere}.steam-panel .snapshot{margin-bottom:0}
+html body[data-page=discord] .discord-content{width:min(960px,100%)!important}.profile-card{flex:1;height:auto!important;min-height:0!important;max-height:none!important;grid-template-columns:1.2fr 1fr!important}.profile-person{display:flex;flex-direction:column}.profile-banner{height:145px!important;flex:none}.profile-person>.profile-action{margin-top:auto;padding-bottom:22px!important}.profile-activity{padding:28px!important;display:flex;flex-direction:column}.profile-games{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:20px!important}
+}
+/* Footer owns a separate grid row; cards must never shrink around their contents. */
+html body.viewport-page .home-stage{box-sizing:border-box!important;grid-template-rows:auto minmax(0,1fr) auto!important;row-gap:12px!important}
+html body.viewport-page .home-stage>.site-shell{height:auto!important;max-height:none!important;min-height:0!important;box-sizing:border-box!important;padding-bottom:24px!important;isolation:isolate}
+html body.viewport-page .home-stage>.site-credit{position:relative!important;inset:auto!important;margin:0!important;transform:none!important;align-self:stretch;box-sizing:border-box;background:#090909d9!important;padding-top:10px!important}
+html body.viewport-page .auth-panel{overflow:visible!important;min-height:min-content!important;flex-shrink:0!important}
+html body.viewport-page .auth-panel #authEntry{flex-shrink:0!important}
+html body.viewport-page .auth-panel #authStatus{flex:none!important;position:static!important;margin-top:14px!important;line-height:1.6!important}
+html body.viewport-page .contact-panel{overflow:visible!important;min-height:min-content!important;flex-shrink:0!important}
+html body.viewport-page .contact-form{flex-shrink:0!important}
+html body.viewport-page .profile-card{overflow:visible!important;min-height:min-content!important;flex-shrink:0!important}
+html body.viewport-page .profile-person{min-height:min-content!important;border-radius:20px 0 0 20px;overflow:visible!important}
+html body.viewport-page .profile-person>*{flex-shrink:0!important}
+html body.viewport-page .profile-person>.profile-action{position:relative!important;flex:none!important;margin-top:14px!important;margin-bottom:0!important}
+html body.viewport-page .steam-dashboard{flex-shrink:0!important;min-height:min-content!important}
+
+@media(min-width:900px) and (min-height:620px){
+html body[data-page=login] .auth-content{width:min(590px,100%)!important}
+html body[data-page=login] .auth-panel{padding:30px 38px!important}
+html body[data-page=login] .auth-panel h2{font-size:33px}
+html body[data-page=login] .auth-panel label{font-size:13px}
+html body[data-page=login] .auth-panel input{height:50px;font-size:15px}
+html body[data-page=login] .auth-primary,html body[data-page=login] .auth-google{height:48px;font-size:14px}
+html body[data-page=login] .auth-caption{font-size:13px}
+html body[data-page=login] .auth-switch{font-size:12px}
+html body[data-page=login] .auth-password button{top:10px}
+}
